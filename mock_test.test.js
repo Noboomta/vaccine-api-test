@@ -8,6 +8,9 @@ const getPeopleByDate = async (date) => {
     return result;
 };
 
+/**
+    Test case id: T8
+*/
 jest.mock('./axiosConfig', () => {
     return {
         baseURL: 'https://suchonsite-server.herokuapp.com/people',
@@ -42,6 +45,9 @@ jest.mock('./axiosConfig', () => {
     }
 });
 
+/**
+    Test case id: T9
+*/
 describe('test getPeopleByDate', () => {
     afterEach(() => jest.resetAllMocks());
 
