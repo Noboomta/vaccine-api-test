@@ -96,7 +96,8 @@ describe("Test response structure" , () => {
     });
 
     /**
-     * Should have data structure like this
+     * Should have data structure like this 
+     * (this test would be false since we create the database in that way)
      */
     test("Test GET people by date structure (no value)", async () => {
         const date = "20-10-2023"
