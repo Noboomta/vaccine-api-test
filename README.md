@@ -7,12 +7,13 @@
 ### yarn
 ```
 yarn
-yarn jest
+yarn test
 ```
 
 ### npm
 ```
 npm install
+npm test
 ```
 
 ## Tools
