@@ -25,6 +25,6 @@ test("should return 504 gov server failed", async () => {
     const date = "18-10-2021"
     return await axios.post(axios.defaults.herokuGetDataFromGov + date)
     .then((response) => {
-        expect(response.status).toEqual(401)
+        expect(response.status).toEqual(504)
     })
 })

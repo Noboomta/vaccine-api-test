@@ -43,7 +43,7 @@ test("Test get people by date with no date param should return 202", async () =>
     Test case id: T7
     GET people/by_date Test (date valid)
 */
-describe("get people by date (no date in db)", async () => {
+describe("get people by date (no date in db)", () => {
     /**
         Should return correct date in response
     */
