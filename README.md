@@ -7,6 +7,7 @@
 ### yarn
 ```
 yarn
+yarn jest
 ```
 
 ### npm
