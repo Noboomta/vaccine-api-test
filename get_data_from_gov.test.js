@@ -10,7 +10,7 @@ beforeAll(() => jest.setTimeout(90 * 1000))
     Should return 401 if the db have this date' data 
 */
 test("should return 401 since data already in db", async () => {
-    const date = "20-10-2021"
+    const date = "11-11-2021"
     return await axios.post(axios.defaults.herokuGetDataFromGov + date)
     .then((response) => {
         expect(response.status).toEqual(401)
@@ -22,7 +22,7 @@ test("should return 401 since data already in db", async () => {
     Should return 504 if fetch gov server fail
 */
 test("should return 504 gov server failed", async () => {
-    const date = "18-10-2021"
+    const date = "11-11-2021"
     return await axios.post(axios.defaults.herokuGetDataFromGov + date)
     .then((response) => {
         expect(response.status).toEqual(504)

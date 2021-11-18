@@ -16,7 +16,7 @@ jest.mock('./axiosConfig', () => {
         baseURL: 'https://suchonsite-server.herokuapp.com/people',
         request: jest.fn().mockResolvedValue({
             _id: '617042a299a86369e7ba81f5',
-            date: '20-10-2021',
+            date: '11-11-2021',
             people: [
               {
                 reservation_id: 1,
@@ -52,9 +52,9 @@ describe('test getPeopleByDate', () => {
     afterEach(() => jest.resetAllMocks());
 
     test('fetches reservations by date', async () => {
-        const data = await getPeopleByDate('20-10-2021');
+        const data = await getPeopleByDate('11-11-2021');
         expect(axios.request).toHaveBeenCalled();
-        expect(axios.request).toHaveBeenCalledWith({ method: 'get', url: '/by_date/20-10-2021' });
-        expect(data.date).toEqual('20-10-2021');
+        expect(axios.request).toHaveBeenCalledWith({ method: 'get', url: '/by_date/11-11-2021' });
+        expect(data.date).toEqual('11-11-2021');
     });
 });

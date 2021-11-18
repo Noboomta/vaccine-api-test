@@ -5,7 +5,7 @@ const axios = require('./axiosConfig') // require('axios')
     Should return 404 if input invalid form.
 */
 test("Test get people by invalid date format", async () => {
-    const date = "20/10/2021"
+    const date = "11/11/2021"
     return await axios.get(axios.defaults.herokuPeopleByDate + date)
     .then((response) => {
     
@@ -21,7 +21,7 @@ test("Test get people by invalid date format", async () => {
     Should found date in data if requestthe correct date form.
 */
 test("Test get people by valid date format and data existed", async () => {
-    const date = "20-10-2021"
+    const date = "11-11-2021"
     return await axios.get(axios.defaults.herokuPeopleByDate + date)
     .then((response) => {
         expect(response.data.date).toEqual(date);
@@ -48,7 +48,7 @@ describe("get people by date (no date in db)", () => {
         Should return correct date in response
     */
     test("Test get people by valid date format but data not existed [response date should equal to date]", async () => {
-        const date = "21-10-2021"
+        const date = "11-11-2021"
         return await axios.get(axios.defaults.herokuPeopleByDate + date)
         .then((response) => {
             expect(response.data.date).toEqual(date);
@@ -59,7 +59,7 @@ describe("get people by date (no date in db)", () => {
         Should return [] in data.people when db not contain this data
     */
     test("Test get people by valid date format but data not existed [respnse people should be []]", async () => {
-        const date = "21-10-2021"
+        const date = "11-11-2023"
         return await axios.get(axios.defaults.herokuPeopleByDate + date)
         .then((response) => {
             expect(response.data.people).toEqual([]);
@@ -85,7 +85,7 @@ describe("Test response structure" , () => {
      * Should have data structure like this
      */
     test("Test GET people by date structure", async () => {
-        const date = "20-10-2021"
+        const date = "11-11-2021"
         return await axios.get(axios.defaults.herokuPeopleByDate + date)
         .then((response) => {
             const data = response.data;
@@ -114,7 +114,7 @@ describe("Test response structure" , () => {
      * Should have data structure like this
      */
     test("Test GET a person in people by date structure", async () => {
-        const date = "20-10-2021";
+        const date = "11-11-2021";
         return await axios.get(axios.defaults.herokuPeopleByDate + date)
         .then((response) => {
             const person = response.data.people[0];
@@ -133,7 +133,7 @@ describe("Test response structure" , () => {
      * Should return "already have data in this date" string
      */
     test("Test POST response message when post duplicate people to database", async () => {
-        const date = "17-10-2021";
+        const date = "11-11-2021";
         return await axios.post(axios.defaults.herokuGetDataFromGov + date)
         .catch(res => {
             const data = res.response.data;
